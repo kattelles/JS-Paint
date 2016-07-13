@@ -8,26 +8,61 @@
     <script src="./js/bundle.js"></script>
   </head>
   <body>
-    <h1>JS Paint</h1>
+    <div class="app">
+    <img id="logo" src="./css/assets/logo.png" alt="" />
     <div class="controls">
-      <button id="clear">clear</button>
+      <div id="clear"><div>Clear</div></div>
+      <a id="canvas-img" download="paint.jpg" title="paint">
+        <div>Save</div>
+        <!-- <img src="./css/assets/download.png" alt="download" /> -->
+      </a>
+
+      <div class="black" id="black"/></div>
+      <div class="brown" id="brown"/></div>
       <div class="red" id="red"></div>
       <div class="blue" id="blue"/></div>
+      <div class="purple" id="purple"/></div>
       <div class="green" id="green"/></div>
       <div class="yellow" id="yellow"/></div>
-      <div class="brown" id="brown"/></div>
       <div class="orange" id="orange"/></div>
       <div class="hot-pink" id="hot-pink"/></div>
-      <div class="pink" id="pink"/></div>
+      <!-- <div class="pink" id="pink"/></div> -->
       <div class="eraser" id="eraser">
         <img src="./css/assets/eraser.png" alt="eraser"/>
       </div>
-      <button id="tiny">tiny</button>
-      <button id="normal">normal</button>
-      <button id="large">large</button>
-      <button id="huge">huge</button>
-      
+      <div class="bucket" id="bucket">
+        <img src="./css/assets/paint-bucket.png" alt="" />
+      </div>
+      <div class="pencil" id="pencil">
+        <img src="./css/assets/pencil.png" alt="" />
+      </div>
+
+      <div class="spray" id="spray">
+        <img src="./css/assets/spray.png" alt="" />
+      </div>
+
+      <div class="text" id="text">
+        <img src="./css/assets/letter.png" alt="" />
+      </div>
+
+      <div id="tiny">
+        <img src="./css/assets/brush.png" alt=""/>
+      </div>
+      <div id="normal">
+        <img src="./css/assets/brush.png" alt=""/>
+      </div>
+      <div id="large">
+        <img src="./css/assets/brush.png" alt=""/>
+      </div>
+      <div id="huge">
+        <img src="./css/assets/brush.png" alt=""/>
+      </div>
+
+
     </div>
-    <canvas class="canvas" id="canvas" width="800" height="600"></canvas>
+      <canvas class="canvas" id="canvas" width="800" height="600"></canvas>
+    <a href=""> </a>
+    <a href="#"></a>
+    </div>
   </body>
 </html>

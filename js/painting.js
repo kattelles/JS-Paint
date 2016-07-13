@@ -1,4 +1,4 @@
-function Painting (context) {
+function Painting (canvas, context) {
 
   let clickX = new Array();
   let clickY = new Array();
@@ -10,6 +10,9 @@ function Painting (context) {
   let clickSize = new Array();
   let curShape = "round";
   let clickShape = new Array();
+  // let bucket = false;
+  let bucketColor = "white";
+  let dataURL;
 
   $('#tiny').click(function(e) {
     curSize = 1;
@@ -47,12 +50,12 @@ function Painting (context) {
       curColor = "yellow";
   });
 
-  $('#orange').click(function(e) {
-      curColor = "orange";
+  $('#brown').click(function(e) {
+    curColor = "#654321";
   });
 
-  $('#brown').click(function(e) {
-      curColor = "#654321";
+  $('#orange').click(function(e) {
+      curColor = "orange";
   });
 
   $('#hot-pink').click(function(e) {
@@ -63,8 +66,34 @@ function Painting (context) {
       curColor = "pink";
   });
 
+  $('#purple').click(function(e) {
+      curColor = "purple";
+  });
+
+  $('#black').click(function(e) {
+      curColor = "black";
+  });
+
   $('#eraser').click(function(e) {
       curColor = "white";
+  });
+
+  $('#bucket').click(function(e) {
+    // bucket = true;
+    bucketColor = curColor;
+    context.fillStyle = bucketColor;
+    context.fillRect(0, 0, context.canvas.width, context.canvas.height);
+
+    clickX =[];
+    clickY =[];
+    clickColor = [];
+    clickSize = [];
+    clickShape = [];
+  });
+
+  $("#pencil").click(function(e) {
+    curColor = "black";
+    curSize = 1;
   });
 
   $('#canvas').mousedown(function(e) {
@@ -101,7 +130,13 @@ function Painting (context) {
 
   function redraw(){
 
-    context.clearRect(0, 0, context.canvas.width, context.canvas.height);
+    // if (bucket) {
+    //   context.fillStyle = bucketColor;
+    //   context.fillRect(0, 0, context.canvas.width, context.canvas.height);
+    // } else {
+    //   context.clearRect(0, 0, context.canvas.width, context.canvas.height);
+    // }
+
 
     for(var i = 0; i < clickX.length; i++) {
       context.beginPath();
@@ -117,7 +152,12 @@ function Painting (context) {
        context.lineJoin = clickShape[i];
        context.stroke();
     }
+
+    dataURL = canvas.toDataURL();
+    $("#canvas-img").attr("href", dataURL);
+    // debugger
   }
+
 }
 
 module.exports = Painting;
