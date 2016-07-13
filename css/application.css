@@ -1,3 +1,89 @@
 .canvas {
+  margin-top: 10px;
   border: 1px solid black;
+}
+
+.controls {
+  display: flex;
+}
+
+#clear {
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.red {
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.blue {
+  width: 20px;
+  height: 20px;
+  background-color: blue;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.green {
+  width: 20px;
+  height: 20px;
+  background-color: green;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.yellow {
+  width: 20px;
+  height: 20px;
+  background-color: yellow;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.pink {
+  width: 20px;
+  height: 20px;
+  background-color: pink;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.brown {
+  width: 20px;
+  height: 20px;
+  background-color: #654321;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.orange {
+  width: 20px;
+  height: 20px;
+  background-color: orange;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.hot-pink {
+  width: 20px;
+  height: 20px;
+  background-color: #ff1493;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.eraser {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.eraser img {
+  width: 20px;
+  height: 20px;
 }
