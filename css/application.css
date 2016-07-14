@@ -1,12 +1,9 @@
 body {
   font-family: 'Signika Negative', sans-serif;
   background: url("./assets/paint.png");
-  /*background-repeat: no-repeat;
-  background-size: 100%;*/
 }
 
 .app {
-
   border-radius: 5px;
   text-align: center;
   width: 900px;
@@ -14,9 +11,6 @@ body {
   background-color: white;
   margin: auto;
   margin-top: 50px;
-}
-
-#logo {
 }
 
 .canvas {
@@ -298,11 +292,6 @@ body {
 }
 
 #font-size {
-  /*-webkit-appearance: none;
-   -moz-appearance: none;
-   appearance: none;
-   width: 60px;
-   height: 35px;*/
   outline: 0;
   overflow: hidden;
   height: 35px;
@@ -314,4 +303,11 @@ body {
   -webkit-border-radius: 6px;
   border-radius: 10px;
   font-family: 'Signika Negative', sans-serif;
+}
+
+.current {
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  margin-right: 5px;
 }
