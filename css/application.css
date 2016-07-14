@@ -1,6 +1,7 @@
 body {
   font-family: 'Signika Negative', sans-serif;
-  background: url("./assets/paint.png");
+  background: url("./assets/splatter.png");
+  background-size: cover;
 }
 
 .app {
@@ -11,6 +12,10 @@ body {
   background-color: white;
   margin: auto;
   margin-top: 50px;
+}
+
+#logo {
+  padding-top: 10px;
 }
 
 .canvas {
