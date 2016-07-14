@@ -140,6 +140,7 @@
 	      let fontSize = $('select[name=selector]').val();
 	      let font = `${fontSize}px 'Signika Negative', sans-serif`;
 	      context.font = font;
+	      context.fillStyle = 'black';
 	      context.fillText(inputText, mouseX, mouseY);
 	    } else {
 	      redraw();
