@@ -72,6 +72,10 @@
 	  // let bucket = false;
 	  let bucketColor = "white";
 	  let dataURL;
+	  let text = false;
+	  let inputText = "fail";
+	  let spray = false;
+	
 	
 	  $('#tiny').click(function(e) {
 	    curSize = 1;
@@ -89,9 +93,6 @@
 	    curSize = 25;
 	  });
 	
-	  $('#clear').click(function(e) {
-	    location.reload();
-	  });
 	
 	  $('#red').click(function(e) {
 	      curColor = "red";
@@ -99,6 +100,38 @@
 	
 	  $('#blue').click(function(e) {
 	      curColor = "blue";
+	  });
+	
+	  $('#teal').click(function(e) {
+	      curColor = "#33FFE6";
+	  });
+	
+	  $('#lime').click(function(e) {
+	      curColor = "#7AFF33";
+	  });
+	
+	  $('#grey').click(function(e) {
+	      curColor = "#808080";
+	  });
+	
+	  $('#lavender').click(function(e) {
+	      curColor = "#9370DB";
+	  });
+	
+	  $('#orange-red').click(function(e) {
+	      curColor = "#FF7F50";
+	  });
+	
+	  $('#beige').click(function(e) {
+	      curColor = " #FFE4B5";
+	  });
+	
+	  $('#sky').click(function(e) {
+	      curColor = "#87CEEB";
+	  });
+	
+	  $('#pink').click(function(e) {
+	      curColor = "pink";
 	  });
 	
 	  $('#green').click(function(e) {
@@ -114,7 +147,7 @@
 	  });
 	
 	  $('#orange').click(function(e) {
-	      curColor = "orange";
+	      curColor = 	"#FFA500";
 	  });
 	
 	  $('#hot-pink').click(function(e) {
@@ -150,9 +183,18 @@
 	    clickShape = [];
 	  });
 	
+	  $('#clear').click(function(e) {
+	    location.reload();
+	  });
+	
 	  $("#pencil").click(function(e) {
 	    curColor = "black";
 	    curSize = 1;
+	  });
+	
+	  $("#text").click(function(e) {
+	      text = true;
+	      inputText = $("#input").val();
 	  });
 	
 	  $('#canvas').mousedown(function(e) {
@@ -160,7 +202,14 @@
 	    const mouseY = e.pageY - this.offsetTop;
 	    painting = true;
 	    addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop);
-	    redraw();
+	    if (text) {
+	      let fontSize = $('select[name=selector]').val();
+	      let font = `${fontSize}px 'Signika Negative', sans-serif`;
+	      context.font = font;
+	      context.fillText(inputText, mouseX, mouseY);
+	    } else {
+	      redraw();
+	    }
 	  });
 	
 	  $('#canvas').mousemove(function(e) {
@@ -187,6 +236,10 @@
 	    clickShape.push(curShape);
 	  };
 	
+	  $("#spray").click(function(e) {
+	    spray = true;
+	  });
+	
 	  function redraw(){
 	
 	    // if (bucket) {
@@ -196,26 +249,43 @@
 	    //   context.clearRect(0, 0, context.canvas.width, context.canvas.height);
 	    // }
 	
-	
-	    for(var i = 0; i < clickX.length; i++) {
-	      context.beginPath();
-	      if(clickDrag[i] && i){
-	        context.moveTo(clickX[i-1], clickY[i-1]);
-	       } else{
-	         context.moveTo(clickX[i]-1, clickY[i]);
-	       }
-	       context.lineTo(clickX[i], clickY[i]);
-	       context.closePath();
-	       context.strokeStyle = clickColor[i];
-	       context.lineWidth = clickSize[i];
-	       context.lineJoin = clickShape[i];
-	       context.stroke();
-	    }
+	    // if (spray) {
+	    //   for(var i = 0; i < clickX.length; i++) {
+	    //     context.beginPath();
+	    //     if(clickDrag[i] && i){
+	    //       context.moveTo(clickX[i-1], clickY[i-1]);
+	    //      } else{
+	    //        context.moveTo(clickX[i]-1, clickY[i]);
+	    //      }
+	    //      context.lineTo(clickX[i], clickY[i]);
+	    //      context.closePath();
+	    //      context.strokeStyle = clickColor[i];
+	    //      context.lineWidth = clickSize[i];
+	    //      context.lineJoin = clickShape[i];
+	    //      context.stroke();
+	    // } else {
+	      for(var i = 0; i < clickX.length; i++) {
+	        context.beginPath();
+	        if(clickDrag[i] && i){
+	          context.moveTo(clickX[i-1], clickY[i-1]);
+	         } else{
+	           context.moveTo(clickX[i]-1, clickY[i]);
+	         }
+	         context.lineTo(clickX[i], clickY[i]);
+	         context.closePath();
+	         context.strokeStyle = clickColor[i];
+	         context.lineWidth = clickSize[i];
+	         context.lineJoin = clickShape[i];
+	         context.stroke();
+	      }
+	    // }
 	
 	    dataURL = canvas.toDataURL();
 	    $("#canvas-img").attr("href", dataURL);
 	    // debugger
 	  }
+	
+	
 	
 	}
 	
