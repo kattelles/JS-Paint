@@ -1,15 +1,18 @@
 body {
+  /*font-family: 'Signika Negative', sans-serif;*/
   font-family: 'Signika Negative', sans-serif;
-  background: url("./assets/splatter.png");
-  background-size: cover;
+  background-color: #355c7d;
+  /*background: url("./assets/splatter.png");*/
+  /*background-size: cover;*/
 }
 
 .app {
   border-radius: 5px;
   text-align: center;
   width: 900px;
-  height: 850px;
-  background-color: white;
+  height: 870px;
+  background-color: #c06c84;
+  /*border: 2px solid #6c5b7b;*/
   margin: auto;
   margin-top: 50px;
 }
@@ -22,7 +25,7 @@ body {
   background-color: white;
   margin: 20px;
   margin-bottom: 20px;
-  border: 1px solid black;
+  border: 2px solid #6c5b7b;
   border-radius: 5px;
   cursor: crosshair;
 }
@@ -40,8 +43,9 @@ body {
   margin-right: 5px;
   width: 60px;
   height: 35px;
-  background-color: #D3D3D3;
+  background-color: #f8b195;
   display: flex;
+  color: #6c5b7b;
   justify-content: space-around;
 }
 
@@ -52,11 +56,12 @@ body {
 }
 
 #canvas-img {
-  background-color: #D3D3D3;
+  background-color: #f8b195;
   cursor: pointer;
   border-radius: 3px;
   margin-right: 5px;
   width: 60px;
+    color: #6c5b7b;
   height: 35px;
   display: flex;
   justify-content: space-around;
@@ -300,8 +305,8 @@ body {
   outline: 0;
   overflow: hidden;
   height: 35px;
-  background-color: #D3D3D3;
-  color: black;
+  background-color: #f8b195;
+  color:  #6c5b7b;
   border: #2c343c;
   padding: 5px 3px 5px 10px;
   -moz-border-radius: 6px;
@@ -316,3 +321,8 @@ body {
   cursor: pointer;
   margin-right: 5px;
 }
+
+/*#gh {
+  width: 100px;
+  height: auto;
+}*/
