@@ -1,21 +1,21 @@
-#JS Paint
+#paintly
 
-[JS Paint live][paint]
+[paintly live][paint]
 
-[paint]: https://kattelles.github.io/JS-Paint/
+[paint]: https://kattelles.github.io/paintly/
 
-JS Paint is a modern paint studio, inspired by the classic MS Paint. It was created with
+paintly is a modern paint studio, inspired by the classic MS Paint. It was created with
 Javascript, jQuery, HTML5 Canvas and CSS.
 
 ![image of splash](https://github.com/kattelles/JS-Paint/blob/master/css/assets/readme-splash.png)
 
-This is an example of some beautiful artwork created solely on JS Paint:
+This is an example of some beautiful artwork created solely on paintly:
 
 ![image of josh](https://github.com/kattelles/JS-Paint/blob/master/css/assets/josh.png)
 
 ## Implementation
 
-JS Paint uses jQuery to render a canvas element on the page when the DOM loads.
+paintly uses jQuery to render a canvas element on the page when the DOM loads.
 
 ```Javascript
 const Painting = require("./painting");
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 ```
 
-When the mouse drags over the page, JS Paint used click handlers to record the exact XY coordinates of each pixel that needs to be rendered. I then iterate over that array and "paint" the dragged line on the canvas.
+When the mouse drags over the page, paintly used click handlers to record the exact XY coordinates of each pixel that needs to be rendered. I then iterate over that array and "paint" the dragged line on the canvas.
 
 ```Javascript
 function redraw(){
