@@ -25,42 +25,48 @@ Painting.prototype.start = function () {
 
   // sizes
   $('#tiny').click(function(e) {
+    text = false;
     curSize = 1;
   });
 
   $('#normal').click(function(e) {
+    text = false;
     curSize = 5;
   });
 
   $('#large').click(function(e) {
+    text = false;
     curSize = 15;
   });
 
   $('#huge').click(function(e) {
+    text = false;
     curSize = 25;
   });
 
   // fill bucket
   $('#bucket').click(function(e) {
+    text = false;
     bucketColor = curColor;
     context.fillStyle = bucketColor;
     context.fillRect(0, 0, context.canvas.width, context.canvas.height);
 
     clickX =[];
     clickY =[];
+    clickDrag = [];
     clickColor = [];
     clickSize = [];
     clickShape = [];
   });
 
   // clear
-
   $('#clear').click(function(e) {
     location.reload();
   });
 
   // pencil
   $("#pencil").click(function(e) {
+    text = false;
     curColor = "black";
     curSize = 1;
   });
@@ -104,6 +110,7 @@ Painting.prototype.start = function () {
   });
 
   const addClick = function(x, y, dragging) {
+    if (text) { return; }
     clickX.push(x);
     clickY.push(y);
     clickDrag.push(dragging);
